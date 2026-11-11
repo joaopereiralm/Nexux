@@ -1,0 +1,17 @@
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  background: transparent;
+  border: 1px solid var(--input-border);
+  border-radius: var(--radius-full);
+  color: var(--text);
+  cursor: pointer;
+  transition: background-color var(--transition);
+}
+
+.toggle:hover {
+  background: var(--surface-raised);
+}

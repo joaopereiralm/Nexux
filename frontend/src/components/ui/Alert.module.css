@@ -1,0 +1,17 @@
+.alert {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-4);
+  border: 1px solid var(--border);
+  border-left-width: 4px;
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  font-size: var(--text-sm);
+}
+
+.title { font-weight: 700; }
+
+.success { border-color: var(--accent); background: var(--accent-soft); }
+.error { border-color: var(--danger); background: var(--danger-soft); }
+.info { border-color: var(--input-border); }

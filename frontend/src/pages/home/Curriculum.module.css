@@ -1,0 +1,30 @@
+.list {
+  display: grid;
+  gap: var(--space-4);
+  padding: 0;
+  list-style: none;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+}
+
+.card {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+  height: 100%;
+  background: var(--bg);
+}
+
+.number {
+  font-family: var(--font-heading);
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--accent-text);
+}
+
+.title { margin-bottom: var(--space-2); font-size: var(--text-xl); }
+.text { color: var(--text-muted); }
+
+@media (max-width: 26rem) {
+  .list { grid-template-columns: 1fr; }
+}

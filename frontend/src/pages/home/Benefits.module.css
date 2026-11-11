@@ -1,0 +1,23 @@
+.grid {
+  display: grid;
+  gap: var(--space-5);
+  padding: 0;
+  list-style: none;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+}
+
+.card { display: flex; flex-direction: column; gap: var(--space-3); height: 100%; }
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: var(--radius-md);
+  background: var(--accent-soft);
+  color: var(--accent-text);
+}
+
+.title { font-size: var(--text-xl); }
+.text { color: var(--text-muted); }

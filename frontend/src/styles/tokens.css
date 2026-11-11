@@ -1,0 +1,109 @@
+/* ==========================================================================
+   Design tokens do NEXUX
+   Paleta base: #101713 · #173D2B · #38D98B · #F5F7F5 · #FFFFFF
+   Os tokens semânticos (--bg, --text...) mudam por tema; os componentes
+   usam apenas tokens semânticos, nunca cores fixas.
+   ========================================================================== */
+
+:root {
+  /* Marca (fixas) */
+  --brand-900: #101713;
+  --brand-700: #173d2b;
+  --brand-500: #38d98b;
+  --brand-100: #f5f7f5;
+  --white: #ffffff;
+
+  /* Tipografia */
+  --font-heading: 'Space Grotesk', 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+
+  --text-xs: 0.8125rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: clamp(2rem, 1.4rem + 2.4vw, 2.75rem);
+  --text-5xl: clamp(2.5rem, 1.6rem + 3.6vw, 3.75rem);
+
+  /* Espaçamento (escala de 4px) */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+
+  /* Forma e movimento */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.625rem;
+  --radius-lg: 1rem;
+  --radius-full: 999px;
+  --transition: 160ms ease;
+
+  /* Layout */
+  --container-width: 72rem;
+  --header-height: 4rem;
+}
+
+/* ---------- Tema escuro (padrão) ---------- */
+:root,
+:root[data-theme='dark'] {
+  color-scheme: dark;
+
+  --bg: #101713;
+  --surface: #16211b;
+  --surface-raised: #1c2a22;
+  --border: #26372d;
+  --input-border: #6b8576;
+
+  --text: #f5f7f5;
+  --text-muted: #a9b8af;
+
+  --accent: #38d98b;
+  --accent-hover: #5be5a3;
+  --accent-text: #38d98b;
+  --accent-soft: rgba(56, 217, 139, 0.14);
+  --on-accent: #101713;
+
+  --danger: #ff8a80;
+  --danger-soft: rgba(255, 138, 128, 0.14);
+
+  --focus-ring: #38d98b;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+/* ---------- Tema claro ---------- */
+:root[data-theme='light'] {
+  color-scheme: light;
+
+  --bg: #f5f7f5;
+  --surface: #ffffff;
+  --surface-raised: #eaf0ec;
+  --border: #d3dcd6;
+  --input-border: #6b7d72;
+
+  --text: #101713;
+  --text-muted: #4a5a50;
+
+  --accent: #38d98b;
+  --accent-hover: #2ec47a;
+  /* O verde principal não tem contraste suficiente como TEXTO sobre branco:
+     links e destaques de texto usam o verde escuro da marca. */
+  --accent-text: #173d2b;
+  --accent-soft: rgba(56, 217, 139, 0.18);
+  --on-accent: #101713;
+
+  --danger: #b42318;
+  --danger-soft: rgba(180, 35, 24, 0.14);
+
+  --focus-ring: #173d2b;
+  --shadow-sm: 0 1px 2px rgba(16, 23, 19, 0.08);
+  --shadow-md: 0 8px 24px rgba(16, 23, 19, 0.1);
+}

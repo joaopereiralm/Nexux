@@ -1,0 +1,115 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+enum Role {
+  STUDENT
+  ADMIN
+}
+
+enum EnrollmentStatus {
+  ACTIVE
+  COMPLETED
+  CANCELED
+}
+
+model User {
+  id        String   @id @default(uuid())
+  name      String
+  email     String   @unique
+  // Hash bcrypt. Nunca armazenar a senha em texto puro.
+  password  String
+  role      Role     @default(STUDENT)
+  createdAt DateTime @default(now())
+
+  enrollments    Enrollment[]
+  lessonProgress LessonProgress[]
+
+  @@map("users")
+}
+
+model Course {
+  id          String   @id @default(uuid())
+  title       String
+  description String
+  thumbnail   String?
+  price       Decimal  @db.Decimal(10, 2)
+  // Carga horária em horas.
+  workload    Int
+  createdAt   DateTime @default(now())
+
+  modules     Module[]
+  enrollments Enrollment[]
+
+  @@map("courses")
+}
+
+model Enrollment {
+  id        String           @id @default(uuid())
+  userId    String
+  courseId  String
+  status    EnrollmentStatus @default(ACTIVE)
+  createdAt DateTime         @default(now())
+
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  // Restrict: não permite apagar um curso que já tenha matrículas.
+  course Course @relation(fields: [courseId], references: [id], onDelete: Restrict)
+
+  // Impede matrículas duplicadas.
+  @@unique([userId, courseId])
+  @@index([courseId])
+  @@map("enrollments")
+}
+
+model Module {
+  id          String  @id @default(uuid())
+  courseId    String
+  title       String
+  description String?
+  order       Int
+
+  course  Course   @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  lessons Lesson[]
+
+  @@index([courseId, order])
+  @@map("modules")
+}
+
+model Lesson {
+  id          String  @id @default(uuid())
+  moduleId    String
+  title       String
+  description String?
+  videoUrl    String
+  // Duração em segundos.
+  duration    Int
+  order       Int
+
+  module   Module           @relation(fields: [moduleId], references: [id], onDelete: Cascade)
+  progress LessonProgress[]
+
+  @@index([moduleId, order])
+  @@map("lessons")
+}
+
+model LessonProgress {
+  id          String    @id @default(uuid())
+  userId      String
+  lessonId    String
+  completed   Boolean   @default(false)
+  completedAt DateTime?
+
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  lesson Lesson @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+
+  // Impede progresso duplicado para o mesmo aluno e aula.
+  @@unique([userId, lessonId])
+  @@index([lessonId])
+  @@map("lesson_progress")
+}
