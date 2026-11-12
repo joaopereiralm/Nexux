@@ -1,0 +1,17 @@
+.page {
+  max-width: 44rem;
+  padding-block: var(--space-6);
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+}
+
+.content {
+  display: grid;
+  gap: var(--space-4);
+}

@@ -122,3 +122,5 @@ a:hover {
     scroll-behavior: auto !important;
   }
 }
+
+#conteudo, #planos { scroll-margin-top: 6rem; }

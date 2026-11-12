@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { NAV_LINKS } from '../../data/landing.js';
 import Logo from './Logo.jsx';
 import styles from './Footer.module.css';
@@ -24,13 +23,6 @@ export default function Footer() {
           </ul>
         </nav>
 
-        <nav aria-label="Rodapé: conta">
-          <h2 className={styles.heading}>Conta</h2>
-          <ul className={styles.list}>
-            <li><Link to="/login">Entrar</Link></li>
-            <li><Link to="/cadastro">Criar conta</Link></li>
-          </ul>
-        </nav>
       </div>
 
       <div className={`container ${styles.bottom}`}>

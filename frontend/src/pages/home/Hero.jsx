@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { Badge, Button } from '../../components/ui/index.js';
 import { MODULES } from '../../data/landing.js';
 import styles from './Hero.module.css';
@@ -16,9 +15,10 @@ export default function Hero() {
             Um curso online completo, com {MODULES.length} módulos que vão da pesquisa com usuários à
             prototipagem no Figma, terminando em um projeto final para o seu portfólio.
           </p>
+          <p>Para estudantes e pessoas começando em UX/UI. Não é preciso ter experiência prévia.</p>
           <div className={styles.actions}>
-            <Button as={Link} to="/login" size="lg"> Entrar como aluno </Button>
-            <Button as={Link} to="/conteudo" variant="secondary" size="lg">Ver conteúdo</Button>
+            <Button as="a" href="#planos" size="lg">Ver preço</Button>
+            <Button as="a" href="#conteudo" variant="secondary" size="lg">Ver conteúdo</Button>
           </div>
         </div>
 

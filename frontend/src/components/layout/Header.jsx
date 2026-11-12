@@ -1,7 +1,6 @@
 import { useEffect, useId, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
 import { NAV_LINKS } from '../../data/landing.js';
-import { Button, Icon } from '../ui/index.js';
+import { Icon } from '../ui/index.js';
 import Logo from './Logo.jsx';
 import ThemeToggle from './ThemeToggle.jsx';
 import styles from './Header.module.css';
@@ -41,22 +40,6 @@ export default function Header() {
               </li>
             ))}
           </ul>
-          <div className={styles.actions}>
-            <Button as={Link} to="/login" variant="secondary" size="sm" onClick={closeMenu}>
-               Entrar
-            </Button>
-            <div className={styles.registerAction}>
-            <Button
-              type="button"
-              size="sm"
-              disabled
-              aria-describedby="register-status"
-            >
-              Cadastrar
-            </Button>
-            <small id="register-status">Indisponível no momento</small>
-          </div>
-          </div>
         </nav>
 
         <div className={styles.controls}>

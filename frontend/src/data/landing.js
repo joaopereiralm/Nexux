@@ -12,10 +12,7 @@ export const NAV_LINKS = [
 
 export const BENEFITS = [
   { icon: 'layers', title: 'Aprendizado em módulos', text: 'Do básico ao projeto final, em uma sequência de módulos e aulas organizada.' },
-  { icon: 'trending', title: 'Progresso visível', text: 'Marque as aulas concluídas e acompanhe sua evolução no painel do aluno.' },
   { icon: 'target', title: 'Foco na prática', text: 'Um projeto final reúne pesquisa, wireframes, UI e prototipagem em um só trabalho.' },
-  { icon: 'file', title: 'Materiais complementares', text: 'Conteúdo de apoio ligado às aulas para você aprofundar os temas.' },
-  { icon: 'clock', title: 'No seu ritmo', text: 'Estude quando quiser e retome exatamente de onde parou.' },
   { icon: 'device', title: 'Em qualquer dispositivo', text: 'Interface responsiva, com navegação por teclado e temas claro e escuro.' },
 ];
 
@@ -38,41 +35,14 @@ export const INSTRUCTORS = [
 
 export const TESTIMONIALS = [
   { quote: 'A divisão em módulos deixou o estudo organizado e fácil de acompanhar.' },
-  { quote: 'Poder marcar as aulas concluídas e ver o progresso me manteve motivado.' },
   { quote: 'O projeto final ajuda a juntar tudo o que foi aprendido durante o curso.' },
 ];
 
-// O preço do plano completo deve coincidir com o do curso cadastrado no seed (Etapa 9).
-export const PLANS = [
-  {
-    id: 'gratuito',
-    name: 'Conta gratuita',
-    price: 0,
-    description: 'Conheça a plataforma antes de se matricular.',
-    features: ['Conteúdo programático completo', 'Página detalhada do curso', 'Cadastro e painel do aluno'],
-    cta: 'Criar conta',
-    featured: false,
-  },
-  {
-    id: 'completo',
-    name: 'Curso completo',
-    price: 297,
-    description: 'UX/UI Design — Do Zero ao Projeto.',
-    features: [
-      'Todos os módulos e aulas',
-      'Acompanhamento de progresso',
-      'Materiais complementares',
-      'Projeto final',
-    ],
-    cta: 'Quero me matricular',
-    featured: true,
-  },
-];
+export const COURSE = { title: 'UX/UI Design — Do Zero ao Projeto', price: 297 };
 
 export const FAQS = [
   { q: 'Preciso ter experiência prévia?', a: 'Não. O curso parte do zero: começa nos conceitos de UX e UI e avança até o projeto final.' },
-  { q: 'Como funciona a matrícula?', a: 'Este é um projeto acadêmico: a matrícula é simulada e registrada no sistema, sem pagamento real nem cobrança.' },
+  { q: 'Como funciona a matrícula?', a: 'Este é um projeto acadêmico: a matrícula é uma demonstração sem cobrança e sem envio dos dados.' },
   { q: 'Quais ferramentas vou usar?', a: 'O módulo de prototipagem usa o Figma. Os demais módulos focam em método e conceitos, que valem para qualquer ferramenta.' },
-  { q: 'Como acompanho meu progresso?', a: 'No ambiente de aprendizagem você marca cada aula como concluída, e o painel do aluno mostra a barra de progresso e a próxima aula.' },
   { q: 'Posso estudar pelo celular?', a: 'Sim. A interface é responsiva e funciona em celulares, tablets e computadores.' },
 ];
