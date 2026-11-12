@@ -82,6 +82,20 @@ export default function LoginForm() {
             required
           />
 
+          <div className={styles.forgotArea}>
+            <button
+              className={styles.forgotButton}
+              type="button"
+              disabled
+              aria-describedby="forgot-password-status"
+            >
+              Esqueci a senha
+            </button>
+            <span id="forgot-password-status" className={styles.unavailable}>
+              Indisponível no momento
+            </span>
+          </div>
+
           <Button type="submit" fullWidth loading={loading}>
             {loading ? 'Entrando…' : 'Entrar'}
           </Button>

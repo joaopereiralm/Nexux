@@ -42,14 +42,8 @@ export default function Header() {
             ))}
           </ul>
           <div className={styles.actions}>
-            <Button
-              as="a"
-              href="#login"
-              variant="secondary"
-              size="sm"
-              onClick={closeMenu}
-            >
-              Entrar
+            <Button as={Link} to="/login" variant="secondary" size="sm" onClick={closeMenu}>
+               Entrar
             </Button>
             <div className={styles.registerAction}>
             <Button

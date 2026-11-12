@@ -1,6 +1,5 @@
 import Footer from '../components/layout/Footer.jsx';
 import Header from '../components/layout/Header.jsx';
-import LoginForm from '../components/auth/LoginForm.jsx';
 import Benefits from './home/Benefits.jsx';
 import Curriculum from './home/Curriculum.jsx';
 import Faq from './home/Faq.jsx';

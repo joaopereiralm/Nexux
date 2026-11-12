@@ -17,8 +17,8 @@ export default function Hero() {
             prototipagem no Figma, terminando em um projeto final para o seu portfólio.
           </p>
           <div className={styles.actions}>
-            <Button as="a" href="#login" size="lg"> Entrar como aluno </Button>
-            <Button as="a" href="#conteudo" variant="secondary" size="lg">Ver conteúdo</Button>
+            <Button as={Link} to="/login" size="lg"> Entrar como aluno </Button>
+            <Button as={Link} to="/conteudo" variant="secondary" size="lg">Ver conteúdo</Button>
           </div>
         </div>
 
